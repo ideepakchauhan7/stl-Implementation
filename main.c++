@@ -28,14 +28,12 @@ public:
     ~Vector3()
     {
         delete[] memory_block;
-        std::cout << "Destruct\n";
     }
 
     Vector3 &operator=(const Vector3 &other) = delete;
 
     Vector3 &operator=(const Vector3 &&other)
     {
-        std::cout << "Move\n";
         x = other.x;
         y = other.y;
         z = other.z;
@@ -66,7 +64,7 @@ int main(int argc, char const *argv[])
     vector.EmplaceBack(1.0, 2.0, 3.0);
     vector.EmplaceBack(2.0f);
 
-    // print(vector);
+    print(vector);
 
     vector.PopBack();
     vector.PopBack();
