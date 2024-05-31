@@ -40,13 +40,13 @@ public:
         return *this;
     }
 };
-template<typename T>
-void print(const Vector<T>&vector){
+template <typename T>
+void print(const Vector<T> &vector)
+{
     for (size_t i = 0; i < vector.Size(); i++)
     {
-        std::cout<<vector[i]<<std::endl;
+        std::cout << vector[i] << std::endl;
     }
-    
 }
 void print(const Vector<Vector3> &vector)
 {
@@ -69,12 +69,18 @@ int main(int argc, char const *argv[])
     vector.PopBack();
     vector.PopBack();
     vector.Clear();
+    
+    Vector<int> v;
+    v.Pushback(1);
+    v.Pushback(2);
+    v.Pushback(3);
+    v.Pushback(4);
 
-    Vector<int>v;
-    v.Pushback(1); 
-    v.Pushback(2); 
-    v.Pushback(3); 
-    v.Pushback(4); 
+    for (Vector<int>::Iterator it = v.begin();
+         it != v.end(); it++)
+    {
+        std::cout << *it << std::endl;
+    }
 
     print(v);
 
